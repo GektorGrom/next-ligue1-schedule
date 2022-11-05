@@ -7,6 +7,5 @@ async function getMatchDay() {
 
 export default async function Home() {
   const matchDay = await getMatchDay();
-  redirect(matchDay);
-  return null
+  redirect(`/${matchDay}`);
 }
