@@ -14,7 +14,7 @@ async function getHeaders() {
 }
 
 async function getMatchesData({day}) {
-  const timeZone = headers().get('x-vercel-ip-timezone') || 'Europe/Paris';
+  const timeZone = headers().get('x-vercel-ip-timezone') || 'America/Edmonton';
   return getMatches(day, timeZone);
 }
 
