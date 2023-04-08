@@ -1,4 +1,4 @@
-const getChannelLogo = (chanel: string): string => {
+const getChannelLogo = (chanel) => {
   const c = chanel.toLowerCase();
   if (c === 'bt sport 1') {
     return 'bt-sport-1.svg';

@@ -1,4 +1,4 @@
-const getClubLogo = (team: string):string => {
+const getClubLogo = (team) => {
   let t = team.toLowerCase();
   // Paris Saint-Germain
   if (t.includes('paris') || t.includes('psg')) {
