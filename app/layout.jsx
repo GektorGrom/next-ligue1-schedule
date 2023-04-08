@@ -1,13 +1,13 @@
 import { AnalyticsWrapper } from './components/analytics';
+import './globals.css';
 
+export const metadata = {
+    title: 'Ligue 1 schedule',
+    description: 'List of Ligue 1 matches for a given day',
+}
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.jsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
-      <head />
       <body>
         {children}
         <footer>
