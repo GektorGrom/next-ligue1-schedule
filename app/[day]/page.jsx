@@ -2,8 +2,6 @@ import { headers } from 'next/headers';
 import getMatches from '../lib/dynamoDB/getMatches';
 
 export const revalidate = 3600;
-export const runtime = 'experimental-edge';
-
 async function getMatchesData({day}) {
   const timeZone = headers().get('x-vercel-ip-timezone') || 'America/Edmonton';
   return getMatches(day, timeZone);
