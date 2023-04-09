@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export async function generateMetadata({ params }) {
     return {
         title: 'Welcome to Ligue 1 schedule',
@@ -7,8 +9,10 @@ export async function generateMetadata({ params }) {
 
 export default function MatchDayLayout({ children }) {
     return (
-        <>
-            <main>{children}</main>
-        </>
+        <main>{children}</main>
     )
+}
+
+MatchDayLayout.propTypes = {
+    children: PropTypes.node.isRequired,
 }

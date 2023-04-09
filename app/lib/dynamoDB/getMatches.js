@@ -36,28 +36,23 @@ const getMatches = async (day, timeZone) => {
         .reduce((acc, next) => {
           const {chanel, start, away, home} = next;
           if (
-            acc.some((el) => {
-              return (
+            acc.some((el) => (
                 getClubLogo(el.away) === getClubLogo(away) &&
                 getClubLogo(el.home) === getClubLogo(home) &&
                 (el.start + 10 * 60 * 1000 > start ||
                   el.start - 10 * 60 * 1000 < start) &&
                 sameChannel(el.chanel, chanel)
-              );
-            })
+              ))
           ) {
             return acc;
           }
           return acc.concat(next);
         }, []),
     );
-  console.log(dedupeMatches);
-  return dedupeMatches.map((el) => {
-    return {
+  return dedupeMatches.map((el) => ({
       ...el,
       startTime: formatInTimeZone(new Date(el.start), timeZone, 'HH:mm'),
-    }
-  });
+    }));
 }
 
 export default getMatches

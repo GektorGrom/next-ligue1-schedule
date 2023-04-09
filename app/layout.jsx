@@ -1,4 +1,6 @@
+import PropTypes from 'prop-types';
 import { AnalyticsWrapper } from './components/analytics';
+
 import './globals.css';
 
 export const metadata = {
@@ -17,4 +19,8 @@ export default function RootLayout({ children }) {
       </body>
     </html>
   )
+}
+
+RootLayout.propTypes = {
+  children: PropTypes.node.isRequired,
 }
